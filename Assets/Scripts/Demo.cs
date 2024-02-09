@@ -35,12 +35,13 @@ public class Demo : MonoBehaviour
 
     }
 
-    private void OntriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("entered");
         if (other.gameObject.tag == blueTag)
         {
             blueCount++;
-            blueCount %= 2;
+            blueCount %= 3;
             if (blueCount == 0) other.GetComponent<MeshRenderer>().material.SetColor("_Color", blue1);
             if (blueCount == 1) other.GetComponent<MeshRenderer>().material.SetColor("_Color", blue2);
             if (blueCount == 2) other.GetComponent<MeshRenderer>().material.SetColor("_Color", blue3);
